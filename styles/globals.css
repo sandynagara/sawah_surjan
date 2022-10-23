@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,6 +17,26 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.sidebar::-webkit-scrollbar,.react-autosuggest__suggestions-container--open::-webkit-scrollbar,.isi-laporan::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track,.isi-laporan::-webkit-scrollbar-track,.react-autosuggest__suggestions-container--open::-webkit-scrollbar-track{
+  background: #bdbdbd;
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb,.isi-laporan::-webkit-scrollbar-thumb,.react-autosuggest__suggestions-container--open::-webkit-scrollbar-thumb {
+  background: #9ad5f7;
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover,.isi-laporan::-webkit-scrollbar-thumb:hover,.react-autosuggest__suggestions-container--open::-webkit-scrollbar-thumb:hover{
+  background: #004A74;
 }
 
 @media (prefers-color-scheme: dark) {
