@@ -4,8 +4,9 @@ import {AiOutlineLogin,AiFillSetting,AiFillInfoCircle} from "react-icons/ai";
 import {BsFillLayersFill} from "react-icons/bs"
 import Layer from './Layer';
 import Pengaturan from './Pengaturan';
+import Info from './Info';
 
-function Sidebar() {
+function Sidebar({basemapSelect,setBasemapSelect,setBasemapActive,basemapActive,sawahActive,setSawahActive}) {
 
     const [menuSelect, setMenuSelect] = useState("Layer")
 
@@ -26,7 +27,7 @@ function Sidebar() {
             <div className='flex items-center w-[200px]'>
                 <Image src={"/logo.png"} width="40px" height="50px"/>
                 <div className='font-bold text-sm ml-2 text-sky-800'>
-                    Dinas Pertanian Kulon Progo
+                    Dinas Pertanian Kabupaten Kulon Progo
                 </div>
             </div>
             <div className='cursor-pointer'>
@@ -54,7 +55,16 @@ function Sidebar() {
         </div>
         <div>
             {menuSelect == "Layer" && <Layer/>}
-            {menuSelect == "Pengaturan" && <Pengaturan/>}
+            {menuSelect == "Pengaturan" && 
+                <Pengaturan 
+                    basemapSelect={basemapSelect} 
+                    setBasemapSelect={setBasemapSelect} 
+                    setBasemapActive={setBasemapActive} 
+                    basemapActive={basemapActive}
+                    sawahActive={sawahActive}
+                    setSawahActive={setSawahActive}
+            />}
+            {menuSelect == "Info" && <Info/>}
         </div>
     </div>
   )
