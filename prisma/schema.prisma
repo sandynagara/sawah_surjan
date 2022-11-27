@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model sawahsurjandemo {
+  gid       Int                      @id @default(autoincrement())
+  fid       Decimal?                 @db.Decimal
+  no        BigInt?
+  no_2      BigInt?
+  pemilik   String?                  @db.VarChar(254)
+  penggarap String?                  @db.VarChar(254)
+  kel_tani  String?                  @db.VarChar(254)
+  jenis     String?                  @db.VarChar(254)
+  mt        String?                  @db.VarChar(254)
+  surveyor  String?                  @db.VarChar(254)
+  tanggal   String?                  @db.VarChar(254)
+  geom      Unsupported("geometry")?
+}
+
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}

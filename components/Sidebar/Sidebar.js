@@ -6,7 +6,7 @@ import Layer from './Layer';
 import Pengaturan from './Pengaturan';
 import Info from './Info';
 
-function Sidebar({basemapSelect,setBasemapSelect,setBasemapActive,basemapActive,sawahActive,setSawahActive}) {
+function Sidebar({basemapSelect,setBasemapSelect,setBasemapActive,basemapActive,sawahActive,setSawahActive,info}) {
 
     const [menuSelect, setMenuSelect] = useState("Layer")
 
@@ -64,7 +64,7 @@ function Sidebar({basemapSelect,setBasemapSelect,setBasemapActive,basemapActive,
                     sawahActive={sawahActive}
                     setSawahActive={setSawahActive}
             />}
-            {menuSelect == "Info" && <Info/>}
+            {menuSelect == "Info" && <Info info={info}/>}
         </div>
     </div>
   )

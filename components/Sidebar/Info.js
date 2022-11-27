@@ -1,30 +1,30 @@
 import React from 'react'
 import InputData from '../Utils/InputData'
 
-function Info() {
+function Info({info}) {
+
   return (
     <div className='bg-white px-3 py-3 h-screen'>
         <div className='text-sm my-2'>
             Pemilik
         </div>
-        <InputData/>
+        <InputData value={info["pemilik"]}/>
+        <div className='text-sm my-2'>
+            Penggarap
+        </div>
+        <InputData value={info["penggarap"]}/>
         <div className='text-sm my-2'>
             Kelompok Tani
         </div>
-        <InputData/>
+        <InputData value={info["kel_tani"]}/>
         <div className='text-sm my-2'>
             Periode Tanam
         </div>
-        <InputData/>
-        <div className='text-sm mb-2'>
-            Kecamatan
-        </div>
-        <InputData/>
+        <InputData value={info["mt"]}/>
         <div className='text-sm my-2'>
-            Desa
+            Tanaman
         </div>
-        <InputData/>
-        
+        <InputData value={info["jenis"]}/>
     </div>
   )
 }
